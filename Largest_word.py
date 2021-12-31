@@ -38,6 +38,3 @@ for w in res:
     pair = Pair(w, words.count(w))
     print(pair)
 
-# How to print the ordinal number of a character in ASCII.
-print("Hello")
-print(ord("H"))  # Ordinal number of "H" - Case sensitive
