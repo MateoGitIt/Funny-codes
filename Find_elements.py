@@ -1,5 +1,6 @@
 import re
 
+# A hard coded hash is used as a prompt, but you can use anything with numbers you'd like
 
 class Pair:
     def __init__(self, word, times):
