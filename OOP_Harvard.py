@@ -282,15 +282,14 @@ class Course:
         logger.addHandler(file_handler)
         return logger
 
-# For logging to different files, always use a setup function with parameters
-# name (name of the logger) and location (log file) and clear handlers.
+# Function to examine a students characteristics
 
     def add_attempt(self, student):
         if len(self.students_enrolled) < self.max_students:
             if student.uniqueness:
-                if student.sat() > self.min_sat:  # Don't forget parenthesis
-                    if student.act() > self.min_act:
-                        if student.gpa() > self.min_gpa:
+                if student.sat > self.min_sat:  
+                    if student.act > self.min_act:
+                        if student.gpa > self.min_gpa:
                             student.is_accepted = True
                             self.students_enrolled.append(student)
                             print("")
@@ -359,7 +358,7 @@ class Course:
                 print(f"We are sorry to inform {student.full_name}"
                       f" has not been accepted to {student.target}.")
                 time.sleep(0.1)
-                self.log_rejected("rejected_lgr", "Rejected_log").info(
+                self.log("rejected_lgr", "Rejected_log").info(
                                 f"{student.full_name} rejected from "
                                 f"{student.target}")
                 time.sleep(0.1)
